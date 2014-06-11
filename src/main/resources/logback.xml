@@ -25,7 +25,7 @@
         </encoder>
     </appender>
 
-    <logger name="se.cag.doodleshop" level="info"/>
+    <logger name="se.caglabs.doodleshop" level="info"/>
     <logger name="org.springframework" level="info"/>
     <logger name="org.springframework.beans" level="info"/>
 

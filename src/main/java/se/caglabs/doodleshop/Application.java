@@ -1,11 +1,9 @@
 /*
  * Created by Daniel Marell 14-02-22 13:51
  */
-package se.cag.doodleshop;
+package se.caglabs.doodleshop;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.ManagementSecurityAutoConfiguration;
-import org.springframework.boot.actuate.autoconfigure.ManagementServerProperties;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
@@ -20,8 +18,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
-import se.cag.doodleshop.util.Config;
-import se.cag.doodleshop.util.DBMS;
+import se.caglabs.doodleshop.util.Config;
+import se.caglabs.doodleshop.util.DBMS;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -83,7 +81,7 @@ public class Application {
         LocalContainerEntityManagerFactoryBean lef = new LocalContainerEntityManagerFactoryBean();
         lef.setDataSource(dataSource);
         lef.setJpaVendorAdapter(jpaVendorAdapter);
-        lef.setPackagesToScan("se.cag.doodleshop");
+        lef.setPackagesToScan("se.caglabs.doodleshop");
         lef.setJpaProperties(getJpaProperties());
         return lef;
     }

@@ -1,7 +1,7 @@
 /*
  * Created by Daniel Marell 14-02-22 11:40
  */
-package se.cag.doodleshop.model;
+package se.caglabs.doodleshop.model;
 
 //import org.hibernate.annotations.Type;
 

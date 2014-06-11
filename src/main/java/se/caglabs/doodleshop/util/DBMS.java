@@ -1,4 +1,4 @@
-package se.cag.doodleshop.util;
+package se.caglabs.doodleshop.util;
 
 import com.googlecode.flyway.core.Flyway;
 

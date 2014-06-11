@@ -1,7 +1,7 @@
 /*
  * Created by Daniel Marell 14-06-10 11:13
  */
-package se.cag.doodleshop;
+package se.caglabs.doodleshop;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -31,7 +31,7 @@ public class TestApplicationContext {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setDataSource(dataSource);
         factory.setJpaVendorAdapter(jpaVendorAdapter);
-        factory.setPackagesToScan("se.cag.doodleshop");
+        factory.setPackagesToScan("se.caglabs.doodleshop");
         factory.setJpaProperties(getJpaProperties());
         return factory;
     }

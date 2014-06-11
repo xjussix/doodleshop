@@ -1,7 +1,7 @@
 /*
  * Created by Daniel Marell 14-03-02 12:02
  */
-package se.cag.doodleshop.resource;
+package se.caglabs.doodleshop.resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import se.cag.doodleshop.model.DoodleMessage;
-import se.cag.doodleshop.repository.DoodleMessageRepository;
-import se.cag.doodleshop.util.BuildInfo;
+import se.caglabs.doodleshop.model.DoodleMessage;
+import se.caglabs.doodleshop.repository.DoodleMessageRepository;
+import se.caglabs.doodleshop.util.BuildInfo;
 
 import java.sql.Timestamp;
 import java.util.List;

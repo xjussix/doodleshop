@@ -1,7 +1,7 @@
 /*
  * Created by Daniel Marell 14-06-03 16:51
  */
-package se.cag.doodleshop.largetests;
+package se.caglabs.doodleshop.largetests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,10 +9,10 @@ import org.junit.*;
 import org.junit.experimental.categories.Category;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
-import se.cag.doodleshop.Application;
-import se.cag.doodleshop.model.DoodleMessage;
-import se.cag.doodleshop.testcategories.LargeTest;
-import se.cag.doodleshop.util.Environment;
+import se.caglabs.doodleshop.Application;
+import se.caglabs.doodleshop.model.DoodleMessage;
+import se.caglabs.doodleshop.testcategories.LargeTest;
+import se.caglabs.doodleshop.util.Environment;
 
 import java.sql.Timestamp;
 import java.util.Arrays;

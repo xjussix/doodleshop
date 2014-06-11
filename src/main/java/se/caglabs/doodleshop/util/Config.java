@@ -1,4 +1,4 @@
-package se.cag.doodleshop.util;
+package se.caglabs.doodleshop.util;
 
 import java.io.IOException;
 import java.util.Properties;

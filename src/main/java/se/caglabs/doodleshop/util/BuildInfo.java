@@ -1,7 +1,7 @@
 /*
  * Created by Daniel Marell 13-05-04 2:39 PM
  */
-package se.cag.doodleshop.util;
+package se.caglabs.doodleshop.util;
 
 import java.io.IOException;
 import java.io.InputStream;

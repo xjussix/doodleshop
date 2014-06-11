@@ -1,7 +1,7 @@
 /*
  * Created by Daniel Marell 14-05-07 19:03
  */
-package se.cag.doodleshop.util;
+package se.caglabs.doodleshop.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ public enum Environment {
 
     private static Logger logger = LoggerFactory.getLogger(Environment.class);
 
-    private static final String ENVIRONMENT_PROPERTY = "se.cag.doodleshop.environment";
+    private static final String ENVIRONMENT_PROPERTY = "se.caglabs.doodleshop.environment";
 
     public static Environment getCurrentEnvironment() {
         return getEnvironment(System.getProperty(ENVIRONMENT_PROPERTY));

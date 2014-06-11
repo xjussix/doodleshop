@@ -1,11 +1,11 @@
 /*
  * Created by Daniel Marell 14-02-22 13:50
  */
-package se.cag.doodleshop.repository;
+package se.caglabs.doodleshop.repository;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
-import se.cag.doodleshop.model.DoodleMessage;
+import se.caglabs.doodleshop.model.DoodleMessage;
 
 import java.util.List;
 

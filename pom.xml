@@ -123,8 +123,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.16</version>
                 <configuration>
-                    <groups>se.cag.doodleshop.testcategories.SmallTest</groups>
-                    <excludedGroups>se.cag.doodleshop.testcategories.MediumTest,se.cag.doodleshop.testcategories.LargeTest
+                    <groups>se.caglabs.doodleshop.testcategories.SmallTest</groups>
+                    <excludedGroups>se.caglabs.doodleshop.testcategories.MediumTest,se.caglabs.doodleshop.testcategories.LargeTest
                     </excludedGroups>
                 </configuration>
                 <executions>
@@ -135,9 +135,9 @@
                             <goal>test</goal>
                         </goals>
                         <configuration>
-                            <groups>se.cag.doodleshop.testcategories.MediumTest</groups>
+                            <groups>se.caglabs.doodleshop.testcategories.MediumTest</groups>
                             <excludedGroups>
-                                   se.cag.doodleshop.testcategories.SmallTest,se.cag.doodleshop.testcategories.LargeTest
+                                se.caglabs.doodleshop.testcategories.SmallTest,se.caglabs.doodleshop.testcategories.LargeTest
                             </excludedGroups>
                         </configuration>
                     </execution>
@@ -148,9 +148,9 @@
                             <goal>test</goal>
                         </goals>
                         <configuration>
-                            <groups>se.cag.doodleshop.testcategories.LargeTest</groups>
+                            <groups>se.caglabs.doodleshop.testcategories.LargeTest</groups>
                             <excludedGroups>
-                                se.cag.doodleshop.testcategories.SmallTest,se.cag.doodleshop.testcategories.MediumTest
+                                se.caglabs.doodleshop.testcategories.SmallTest,se.caglabs.doodleshop.testcategories.MediumTest
                             </excludedGroups>
                         </configuration>
                     </execution>
