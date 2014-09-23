@@ -1,4 +1,4 @@
-FROM dockerfiles/java
+FROM dockerfile/java
 MAINTAINER mikael@sennerholm.net
 ADD doodleshop.war /doodleshop.war
 EXPOSE 8080
