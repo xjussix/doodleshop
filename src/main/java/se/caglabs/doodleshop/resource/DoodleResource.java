@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import se.caglabs.doodleshop.model.DoodleMessage;
 import se.caglabs.doodleshop.repository.DoodleMessageRepository;
 import se.caglabs.doodleshop.util.BuildInfo;
+import se.caglabs.doodleshop.util.Environment;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -55,4 +56,9 @@ public class DoodleResource {
         return BuildInfo.getApplicationVersion();
     }
 
+    @RequestMapping(value = "/environment", method = RequestMethod.GET)
+    @ResponseBody
+    public String getEnvironment() {
+        return Environment.getCurrentEnvironment().name();
+    }
 }
