@@ -20,7 +20,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @Category(LargeTest.class)
-public class DoodleResourceTest {
+public class DoodleTest {
     @BeforeClass
     public static void setUpClass() {
         Environment.setEnvironment(Environment.AUTOSMALL);
@@ -42,8 +42,7 @@ public class DoodleResourceTest {
     }
 
     @Test
-    public void test1() throws Exception {
-        System.out.println("*** executed DoodleResourceTest ***");
+    public void testDoodles() throws Exception {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
