@@ -1,13 +1,13 @@
 #!/bin/bash
 # Deploy and run smoketest on doodle
-INSTANS=${DOODLE_ENV}
-VERSION=${GO_PIPELINE_LABEL}
-PORTPREFIX=$1
-PORT=8080
+export INSTANS=${DOODLE_ENV}
+export VERSION=${GO_PIPELINE_LABEL}
+export PORTPREFIX=$1
+export PORT=8080
 
 set -e
 echo "Running smoketests"
-bash smoketest.sh 
+bash smoketest.sh >/dev/null 2>&1
 
 for f in tests/${INSTANS}/*.sh
 do
