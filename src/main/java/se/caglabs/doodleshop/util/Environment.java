@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.InvalidPropertyException;
 
 public enum Environment {
-    LOCAL, IT, TEST, PROD;
+    LOCAL, AUTOSMALL, AUTOLARGE, MAN, PROD;
 
     private static Logger logger = LoggerFactory.getLogger(Environment.class);
 
@@ -28,7 +28,7 @@ public enum Environment {
             try {
                 result = Environment.valueOf(environmentParam.toUpperCase());
             } catch (IllegalArgumentException e) {
-                throw new InvalidPropertyException(Environment.class, environmentParam.toUpperCase(),
+                throw new InvalidPropertyException(Environment.class, environmentParam,
                         "Unable to detect environment based property " + ENVIRONMENT_PROPERTY + ":" + e.getMessage());
             }
         } else {

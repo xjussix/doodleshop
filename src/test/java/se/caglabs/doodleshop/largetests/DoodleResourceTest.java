@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 public class DoodleResourceTest {
     @BeforeClass
     public static void setUpClass() {
-        Environment.setEnvironment(Environment.IT);
+        Environment.setEnvironment(Environment.AUTOSMALL);
         Application.start();
     }
 
