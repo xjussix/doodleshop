@@ -10,7 +10,7 @@ set -e
 echo running sudo docker rm -f doodleshop-${INSTANS}
 sudo docker rm -f doodleshop-${INSTANS} || /bin/true
 # Start a new one
-echo running sudo docker run -d -e "se.caglabs.doodleshop.environmen=${INSTANS}" --name doodleshop-${INSTANS} -p ${PORTPREFIX}${PORT}:${PORT} doodleshop:$VERSION
+echo running sudo docker run -d -e "DOODLE_ENV=${DOODLE_ENV}" --name doodleshop-${INSTANS} -p ${PORTPREFIX}${PORT}:${PORT} doodleshop:$VERSION
 sudo docker run -d -e "se.caglabs.doodleshop.environmen=${INSTANS}" --name doodleshop-${INSTANS} -p ${PORTPREFIX}${PORT}:${PORT} doodleshop:$VERSION
 # Sleep some time before checking that it's working
 sleep 2
