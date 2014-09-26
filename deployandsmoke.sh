@@ -13,6 +13,6 @@ sudo docker rm -f doodleshop-${INSTANS} || /bin/true
 echo running sudo docker run -d -e "DOODLE_ENV=${DOODLE_ENV}" --name doodleshop-${INSTANS} -p ${PORTPREFIX}${PORT}:${PORT} doodleshop:$VERSION
 sudo docker run -d -e "DOODLE_ENV=${DOODLE_ENV}" --name doodleshop-${INSTANS} -p ${PORTPREFIX}${PORT}:${PORT} doodleshop:$VERSION
 # Sleep some time before checking that it's working
-sleep 10
+sleep 30
 bash smoketest.sh 
 
