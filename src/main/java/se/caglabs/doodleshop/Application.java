@@ -3,10 +3,14 @@
  */
 package se.caglabs.doodleshop;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
+import org.springframework.boot.context.event.ApplicationStartedEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,6 +22,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import se.caglabs.doodleshop.util.BuildInfo;
 import se.caglabs.doodleshop.util.Config;
 import se.caglabs.doodleshop.util.DBMS;
 
@@ -29,6 +34,8 @@ import java.util.Properties;
 @EnableJpaRepositories
 @EnableAutoConfiguration
 public class Application {
+    private static Logger log = LoggerFactory.getLogger(Application.class);
+
     private static ConfigurableApplicationContext applicationContext;
 
     public static void main(String[] args) {
@@ -37,8 +44,16 @@ public class Application {
 
     public static void start(String[] args) {
         DBMS.INSTANCE.migrate();
-        applicationContext = SpringApplication.run(Application.class, args);
+        SpringApplication app = new SpringApplication(Application.class);
+        app.addListeners(new ApplicationListener<ApplicationStartedEvent>() {
+            @Override
+            public void onApplicationEvent(ApplicationStartedEvent event) {
+                log.info("AppVersion: " + BuildInfo.getApplicationVersion());
+            }
+        });
+        app.run(args);
     }
+
 
     public static void start() {
         start(new String[0]);
