@@ -50,7 +50,7 @@ public class VersionTest {
         RestTemplate template = new RestTemplate();
 
         ResponseEntity<String> entity = template.getForEntity(
-                "http://localhost:9200/version",
+                "http://localhost:8080/version",
                 String.class);
 
         assertEquals(HttpStatus.OK, entity.getStatusCode());

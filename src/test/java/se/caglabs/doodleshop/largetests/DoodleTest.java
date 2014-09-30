@@ -53,7 +53,7 @@ public class DoodleTest {
                 createJson(createDoodleMessage("message")), headers);
 
         ResponseEntity<Long> entity = template.postForEntity(
-                "http://localhost:9200/doodles",
+                "http://localhost:8080/doodles",
                 requestEntity, Long.class);
 
 
