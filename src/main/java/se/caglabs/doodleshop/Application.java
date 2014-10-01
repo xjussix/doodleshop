@@ -25,7 +25,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import se.caglabs.doodleshop.util.BuildInfo;
 import se.caglabs.doodleshop.util.Config;
 import se.caglabs.doodleshop.util.DBMS;
+import se.caglabs.doodleshop.LoggerInitListener;
 
+import javax.servlet.ServletContextListener;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -53,7 +55,6 @@ public class Application {
         });
         app.run(args);
     }
-
 
     public static void start() {
         start(new String[0]);
@@ -124,5 +125,10 @@ public class Application {
     @Bean
     public PlatformTransactionManager transactionManager() {
         return new JpaTransactionManager();
+    }
+
+    @Bean
+    public ServletContextListener LoggerInitListener() {
+        return new LoggerInitListener();
     }
 }
