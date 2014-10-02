@@ -21,20 +21,21 @@ import java.io.IOException;
 import java.util.MissingResourceException;
 
 /**
- * Listener that configures the log context readong logback configuration from
+ * Listener that configures the log context reading logback configuration from
  * a logback config file per environment:
  * LOCAL.logback.xml
  * PROD.logback.xml
  * etc.
  */
-public class LoggerInitListener implements ServletContextListener {
+public class LoggerInitializer implements ServletContextListener {
 
-    private static Logger logger = LoggerFactory.getLogger(LoggerInitListener.class.getName());
+    private static Logger logger = LoggerFactory.getLogger(LoggerInitializer.class.getName());
 
     @Override
     public void contextInitialized(ServletContextEvent event) {
         ILoggerFactory loggerFactory = LoggerFactory.getILoggerFactory();
         if (loggerFactory instanceof LoggerContext) {
+            // SLF4J is bound to logback in the current environment
             LoggerContext context = (LoggerContext) loggerFactory;
             String logbackConfigResourceKey = Environment.getCurrentEnvironment() + "." + ContextInitializer.AUTOCONFIG_FILE;
             try {
@@ -53,9 +54,9 @@ public class LoggerInitListener implements ServletContextListener {
             }
             StatusPrinter.printInCaseOfErrorsOrWarnings(context);
         } else {
-            logger.error("Application is unable to get logback LoggerContext when trying to configure logback. Getting {}",
-                    loggerFactory.getClass().getName());
-            throw new ClassCastException("Application is unable to cast ILoggerFactory to logback LoggerContext." +
+            // SLF4J is NOT bound to logback
+            logger.error("Unable to configure logback. SLF4J is not bound to logback in this application.");
+            throw new ClassCastException("Unable to configure logback. Failed casting ILoggerFactory to logback LoggerContext." +
                     " LoggerFactory.getILoggerFactory() returns " + loggerFactory.getClass().getName());
         }
     }

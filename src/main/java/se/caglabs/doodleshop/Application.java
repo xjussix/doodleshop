@@ -25,7 +25,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import se.caglabs.doodleshop.util.BuildInfo;
 import se.caglabs.doodleshop.util.Config;
 import se.caglabs.doodleshop.util.DBMS;
-import se.caglabs.doodleshop.LoggerInitListener;
 
 import javax.servlet.ServletContextListener;
 import javax.sql.DataSource;
@@ -128,7 +127,7 @@ public class Application {
     }
 
     @Bean
-    public ServletContextListener LoggerInitListener() {
-        return new LoggerInitListener();
+    public ServletContextListener loggerInitializer() {
+        return new LoggerInitializer();
     }
 }
