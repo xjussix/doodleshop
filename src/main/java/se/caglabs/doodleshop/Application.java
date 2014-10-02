@@ -128,6 +128,6 @@ public class Application {
 
     @Bean
     public ServletContextListener loggerInitializer() {
-        return new LoggerInitializer();
+        return new LogbackLoggerInitializer();
     }
 }

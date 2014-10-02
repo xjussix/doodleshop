@@ -27,9 +27,9 @@ import java.util.MissingResourceException;
  * PROD.logback.xml
  * etc.
  */
-public class LoggerInitializer implements ServletContextListener {
+public class LogbackLoggerInitializer implements ServletContextListener {
 
-    private static Logger logger = LoggerFactory.getLogger(LoggerInitializer.class.getName());
+    private static Logger logger = LoggerFactory.getLogger(LogbackLoggerInitializer.class.getName());
 
     @Override
     public void contextInitialized(ServletContextEvent event) {
