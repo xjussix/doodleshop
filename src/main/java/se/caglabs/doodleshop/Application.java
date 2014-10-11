@@ -52,7 +52,7 @@ public class Application {
                 log.info("AppVersion: " + BuildInfo.getApplicationVersion());
             }
         });
-        app.run(args);
+        applicationContext = app.run(args);
     }
 
     public static void start() {
@@ -62,6 +62,7 @@ public class Application {
     public static void stop() {
         if (applicationContext != null) {
             applicationContext.stop();
+            applicationContext.close();
             applicationContext = null;
         }
     }
