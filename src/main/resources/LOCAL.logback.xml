@@ -25,6 +25,13 @@
         </encoder>
     </appender>
 
+    <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <remoteHost>localhost</remoteHost>
+        <port>14560</port>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        <customFields>{"appname":"doodleshop"}</customFields>
+    </appender>
+
     <logger name="se.caglabs.doodleshop" level="info"/>
     <logger name="org.springframework" level="info"/>
     <logger name="org.springframework.beans" level="info"/>
@@ -32,5 +39,6 @@
     <root level="warn">
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
+        <appender-ref ref="stash" />
     </root>
 </configuration>
