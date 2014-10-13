@@ -4,20 +4,17 @@
 package se.caglabs.doodleshop.repository;
 
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import se.caglabs.doodleshop.TestApplicationContext;
-import se.caglabs.doodleshop.testcategories.SmallTest;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = TestApplicationContext.class)
-@Category(SmallTest.class)
 public class DoodleMessageRepositoryTest {
     @Autowired
     private DoodleMessageRepository repository;

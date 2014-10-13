@@ -4,10 +4,7 @@
 package se.caglabs.doodleshop.util;
 
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
-import se.caglabs.doodleshop.testcategories.SmallTest;
 
-@Category(SmallTest.class)
 public class BuildInfoTest {
     @Test
     public void test() throws Exception {
