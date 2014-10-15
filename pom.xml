@@ -140,7 +140,6 @@
                         </goals>
                         <configuration>
                             <groups>se.caglabs.doodleshop.testcategories.LargeTest</groups>
-                            <excludedGroups>se.caglabs.doodleshop.testcategories.SmallTest</excludedGroups>
                         </configuration>
                     </execution>
                 </executions>
