@@ -3,6 +3,8 @@
  */
 package se.caglabs.doodleshop;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -65,6 +67,13 @@ public class Application {
             applicationContext.close();
             applicationContext = null;
         }
+    }
+
+    @Bean
+    public ObjectMapper jsonMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+        return objectMapper;
     }
 
 //    @Bean

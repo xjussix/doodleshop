@@ -4,7 +4,7 @@
         <resetJUL>true</resetJUL>
     </contextListener>
 
-    <!-- To enable JMX Management -->
+    <!-- Enable JMX Management -->
     <jmxConfigurator/>
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -25,11 +25,11 @@
         </encoder>
     </appender>
 
-    <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <remoteHost>localhost</remoteHost>
-        <port>14560</port>
+    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <remoteHost>caglabs.se</remoteHost>
+        <port>42000</port>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
-        <customFields>{"appname":"doodleshop"}</customFields>
+        <customFields>{"appname":"doodleshop-local"}</customFields>
     </appender>
 
     <logger name="se.caglabs.doodleshop" level="info"/>
@@ -39,6 +39,6 @@
     <root level="warn">
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
-        <appender-ref ref="stash" />
+        <appender-ref ref="logstash" />
     </root>
 </configuration>
