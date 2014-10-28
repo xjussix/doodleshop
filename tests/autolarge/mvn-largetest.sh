@@ -2,6 +2,6 @@
 
 echo "Executing Maven LargeTest for env:"
 env
-mvn verify -B
+mvn -B -Pint-test verify
 echo "--- END ---"
 exit 0
