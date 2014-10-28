@@ -1,7 +1,7 @@
 /*
  * Created by Daniel Marell 14-06-03 17:00
  */
-package se.caglabs.doodleshop.util;
+package se.caglabs.doodleshop;
 
 import org.junit.Test;
 

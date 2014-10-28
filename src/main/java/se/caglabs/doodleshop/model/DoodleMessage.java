@@ -3,10 +3,8 @@
  */
 package se.caglabs.doodleshop.model;
 
-//import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 public class DoodleMessage {
@@ -16,14 +14,22 @@ public class DoodleMessage {
     private Long id;
 
     @Column(name = "CREATEDAT", nullable = false)
-    //@Type(type = "timestamp")
-    private Timestamp created;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
 
     @Column(name = "AUTHOR", nullable = false)
     private String author;
 
     @Column(name = "MESSAGE", nullable = false)
     private String message;
+
+    public DoodleMessage() {
+    }
+
+    public DoodleMessage(String author, String message) {
+        this.author = author;
+        this.message = message;
+    }
 
     public Long getId() {
         return id;
@@ -33,11 +39,11 @@ public class DoodleMessage {
         this.id = id;
     }
 
-    public Timestamp getCreated() {
+    public Date getCreated() {
         return created;
     }
 
-    public void setCreated(Timestamp created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 

@@ -1,0 +1,51 @@
+server:
+  port: 8080
+management:
+  port: 7601
+endpoints:
+  shutdown:
+    enabled: true
+
+#spring:
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/doodleshop.db
+#    username: sa
+#    password:
+#    driverClassName: org.h2.Driver
+---
+
+spring:
+  profiles: local
+  jpa:
+    hibernate:
+      ddl-auto: none
+se.caglabs.doodleshop:
+  backgroundcolor: green
+
+---
+
+spring:
+  profiles: autosmall
+se.caglabs.doodleshop:
+  backgroundcolor: red
+
+---
+
+spring:
+  profiles: autolarge
+se.caglabs.doodleshop:
+  backgroundcolor: red
+
+---
+
+spring:
+  profiles: man
+se.caglabs.doodleshop:
+  backgroundcolor: magenta
+
+---
+
+spring:
+  profiles: prod
+se.caglabs.doodleshop:
+  backgroundcolor: white

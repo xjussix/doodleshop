@@ -1,5 +1,7 @@
 == Mysql setup ==
 
+Todo: Changed to H2. Describe H2 instead.
+
 CREATE DATABASE doodleshop;
 GRANT ALL PRIVILEGES ON *.* TO 'doodleshop'@'localhost' identified by 'doodleshop' WITH GRANT OPTION;
 

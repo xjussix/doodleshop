@@ -1,44 +1,23 @@
 package se.caglabs.doodleshop.util;
 
-import java.io.IOException;
-import java.util.Properties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 
-public enum Config {
-    INSTANCE;
+import javax.annotation.PostConstruct;
 
-    private final Properties properties = new Properties();
+public class Config {
+    private String backgroundColor;
 
-    private Config() {
-        Environment environment = Environment.getCurrentEnvironment();
-        String resource = "config/" + environment + ".properties";
-        try {
-            properties.load(getClass().getClassLoader().getResourceAsStream(resource));
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to load configuration: " + resource);
-        }
+    @Autowired
+    private Environment environment;
+
+    @PostConstruct
+    private void init() {
+        backgroundColor = environment.getProperty("se.caglabs.doodleshop.backgroundcolor");
     }
 
-    public int getHttpPort() {
-        return Integer.parseInt(properties.getProperty("http.port"));
-    }
-
-    public int getShutdownPort() {
-        return Integer.parseInt(properties.getProperty("shutdown.port"));
-    }
 
     public String getBackgroundColor() {
-        return properties.getProperty("backgroundcolor");
-    }
-
-    public String getDbUrl() {
-        return properties.getProperty("db.url");
-    }
-
-    public boolean isDbTestData() {
-        return Boolean.parseBoolean(properties.getProperty("db.testdata"));
-    }
-
-    public boolean isFeatureDeleteFriend() {
-        return Boolean.parseBoolean(properties.getProperty("feature.deletefriend"));
+        return backgroundColor;
     }
 }
