@@ -5,6 +5,8 @@ management:
 endpoints:
   shutdown:
     enabled: true
+flyway:
+  locations: db/migration,db/testdata
 
 #spring:
 #  datasource:
