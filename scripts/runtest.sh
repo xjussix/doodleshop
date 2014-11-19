@@ -9,7 +9,7 @@ set -e
 echo "Running smoketests"
 bash smoketest.sh >/dev/null 2>&1
 
-for f in tests/${INSTANCE}/*.sh
+for f in ../tests/${INSTANCE}/*.sh
 do
     echo "Processing $f file ..."
     bash $f
