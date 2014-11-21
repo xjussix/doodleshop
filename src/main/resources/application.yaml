@@ -1,10 +1,14 @@
 server:
-  port: 8080
+  port: 8090
 management:
   port: 9200
 endpoints:
   shutdown:
     enabled: true
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
 flyway:
   locations: db/migration,db/testdata
 
@@ -18,9 +22,6 @@ flyway:
 
 spring:
   profiles: local
-  jpa:
-    hibernate:
-      ddl-auto: none
 se.caglabs.doodleshop:
   backgroundcolor: green
 
