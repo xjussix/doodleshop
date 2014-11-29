@@ -1,7 +1,6 @@
 #!/bin/bash
 # Deploy and run smoketest on doodle
 export INSTANCE=${DOODLE_ENV}
-export VERSION=${GO_PIPELINE_LABEL}
 export PORT_PREFIX=$1
 export PORT=8080
 
