@@ -8,9 +8,8 @@ set -e
 # Newversion
 #VERSION=${GO_PIPELINE_LABEL} (Old, may not always working futher down in the dependency chain)
 # http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
-SCRIPT_DIR=$(dirname $(readlink -f $0))"
-VERSION=`grep AppVersion ${SCRIPT_DIR}/../BuildInfo.propertiesproperties  | awk -F'=' '{print $2}'`
-echo "Deploy Version ${VERSION}"
+SCRIPT_DIR=$(dirname $(readlink -f $0))
+VERSION=`grep AppVersion ${SCRIPT_DIR}/../BuildInfo.properties | awk -F'=' '{print $2}'`
 # Kill old instans
 echo running sudo docker rm -f doodleshop-${INSTANCE}
 sudo docker rm -f doodleshop-${INSTANCE} || /bin/true
