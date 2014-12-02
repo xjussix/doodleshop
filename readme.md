@@ -1,4 +1,5 @@
 ## Doodleshop Continuous Delivery Demo Application
+Generera bygge
 
 Features:
 
