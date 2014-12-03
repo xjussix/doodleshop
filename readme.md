@@ -1,5 +1,4 @@
 ## Doodleshop Continuous Delivery Demo Application
-Generera bygge
 
 Features:
 
@@ -43,5 +42,3 @@ Read created doodles:
 
 Have fun,
 Daniel Marell
-
-Trigger build 9
